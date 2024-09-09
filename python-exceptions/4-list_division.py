@@ -32,9 +32,3 @@ def list_division(my_list_1, my_list_2, list_length):
                     result.append(0)
 
     return result
-
-list1 = [10, 'a', 5, 8]
-list2 = [2, 4, 0, 1]
-length = 6
-
-print(list_division(list1, list2, length))
