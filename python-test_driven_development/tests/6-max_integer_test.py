@@ -1,35 +1,21 @@
 #!/usr/bin/python3
 import unittest
-from your_module_name import max_integer  # Replace 'your_module_name' with the actual name of your module
+max_integer = __import__('6-max_integer').max_integer
+""" Max integer - Unittest """
+
 
 class TestMaxInteger(unittest.TestCase):
-    def test_positive_integers(self):
-        self.assertEqual(max_integer([1, 2, 3, 4, 5]), 5)
+    def test_int(self):
+        self.assertEqual(max_integer([1, 2, 3]), 3)
+        self.assertEqual(max_integer(""), None)
+        self.assertEqual(max_integer([3, 2, 1]), 3)
+        self.assertEqual(max_integer([1, 3, 2]), 3)
+        self.assertEqual(max_integer([-1, 2, 3]), 3)
+        self.assertEqual(max_integer([-1, -2, -3]), -1)
+        self.assertEqual(max_integer([3]), 3)
 
-    def test_negative_integers(self):
-        self.assertEqual(max_integer([-5, -4, -3, -2, -1]), -1)
+    def test_value(self):
+        self.assertRaises(TypeError, max_integer, ['9', 5])
 
-    def test_mixed_integers(self):
-        self.assertEqual(max_integer([-1, 0, 1]), 1)
-
-    def test_single_element(self):
-        self.assertEqual(max_integer([42]), 42)
-
-    def test_empty_list(self):
-        self.assertIsNone(max_integer([]))
-
-    def test_identical_elements(self):
-        self.assertEqual(max_integer([7, 7, 7, 7]), 7)
-
-    def test_large_numbers(self):
-        self.assertEqual(max_integer([1000000, 5000000, 10000000]), 10000000)
-
-    def test_floats(self):
-        self.assertEqual(max_integer([1.5, 2.5, 0.5]), 2.5)
-
-    def test_mixed_types(self):
-        with self.assertRaises(TypeError):
-            max_integer([1, '2', 3])
-
-if __name__ == '__main__':
-    unittest.main()
+    def test_float(self):
+        self.assertEqual(max_integer([2.4, 3]), 3)
