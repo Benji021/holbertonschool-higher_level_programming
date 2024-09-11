@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+This module contains the say_my_name function, which displays the first and last names passed as arguments.
+"""
 def say_my_name(first_name, last_name=""):
     if not isinstance(first_name, str):
         raise TypeError("first_name must be a string")
