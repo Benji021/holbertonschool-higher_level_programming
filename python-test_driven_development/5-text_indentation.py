@@ -18,4 +18,4 @@ def text_indentation(text):
             skip_space = False
 
     # Print the result without leading/trailing spaces on each line
-    print(result.strip()
+    print(result.strip())
