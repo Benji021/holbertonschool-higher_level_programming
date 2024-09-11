@@ -4,24 +4,18 @@ def text_indentation(text):
         raise TypeError("text must be a string")
 
     result = ""
+    skip_space = True  # Flag to skip spaces at the beginning of a new sentence
 
-    i = 0
-    while i < len(text):
-        result += text[i]
+    for char in text:
+        result += char
+        if char in ".?:":
+            result += "\n\n"
+            skip_space = True  # We want to skip spaces after these characters
+        elif char == " " and skip_space:
+            # Skip the space after punctuation
+            continue
+        else:
+            skip_space = False
 
-        if text[i] in '.?':
-            result += '\n\n'
-            while i + 1 < len(text) and text[i + 1] == ' ':
-                i += 1
-                result += '\n'
-        elif text[i] == ':':
-            result += '\n\n'
-            while i + 1 < len(text) and text[i + 1] == ' ':
-                i += 1
-                result += '\n'
-
-        i += 1
-
-    print(result.strip())
-
-text_indentation("Hello world. This is an example text: it should work fine. Have a good day?")
+    # Print the result without leading/trailing spaces on each line
+    print(result.strip()
