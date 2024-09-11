@@ -1,14 +1,5 @@
 #!/usr/bin/python3
 def text_indentation(text):
-     """
-    Prints the input text with 2 new lines after each of the characters: '.', '?', and ':'.
-
-    Args:
-    text (str): The text to process and print.
-
-    Raises:
-    TypeError: If the input is not a string.
-    """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
