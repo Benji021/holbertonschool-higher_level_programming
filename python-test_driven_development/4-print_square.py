@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This module contains a function that prints a square with the character '#'.
+This module contains a function that prints
+a square with the character '#'.
 """
 def print_square(size):
     if not isinstance(size, int):
