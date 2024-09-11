@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+This module does X, Y, and Z.
+"""
 def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
