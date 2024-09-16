@@ -4,3 +4,5 @@
 class Square:
     """Empty class that define a square"""
     pass
+s = Square()
+print(s)
