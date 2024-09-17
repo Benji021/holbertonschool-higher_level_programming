@@ -3,12 +3,14 @@
 
 class Square:
     def __init__(self, size=0):
-        self.__size = size
+        self.size = size
 
     def size(self):
+        """Retrieve the size of the square"""
         return self.__size
         
-    def __init__(self, value):
+    def size(self, value):
+        """Set the size of the square with validation"""
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         if value < 0:
@@ -16,5 +18,5 @@ class Square:
         self.__size = value
 
     def area(self):
-        """return the area of the square"""
+        """Return the area of the square"""
         return self.__size ** 2
