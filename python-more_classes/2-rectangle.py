@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Define a Rectangle class"""
 
-class rectangle:
+class Rectangle:
     """defines the rectangle area and perimetre"""
 
     def __init__(self, width=0, height=0):
