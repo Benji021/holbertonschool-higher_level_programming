@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Define the square"""
 
+
 class Square:
     def __init__(self, size=0):
         self.size = size
@@ -10,6 +11,7 @@ class Square:
         """Retrieve the size of the square"""
         return self.__size
 
+
     @size.setter   
     def size(self, value):
         """Set the size of the square with validation"""
@@ -18,6 +20,7 @@ class Square:
         if value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
+
 
     def area(self):
         """Return the area of the square"""
