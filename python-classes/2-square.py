@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Define a square"""
 
+
 class Square:
     """Empty class that define a square"""
 
@@ -11,3 +12,4 @@ class Square:
         if size < 0:
             raise ValueError("size must be >= 0")
         self.__size = size
+        
