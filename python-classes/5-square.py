@@ -11,7 +11,7 @@ class Square:
         """Retrieve the size of the square"""
         return self.__size
 
-    @size.setter   
+    @size.setter
     def size(self, value):
         """Set the size of the square with validation"""
         if not isinstance(value, int):
@@ -23,7 +23,7 @@ class Square:
     def area(self):
         """Return the area of the square"""
         return self.__size ** 2
-    
+
     def my_print(self):
         """Public method to print the square using '#'"""
         if self.__size == 0:
