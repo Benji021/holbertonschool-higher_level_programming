@@ -47,7 +47,7 @@ class Rectangle:
         def height(self, value):
             """
             Args:
-            value (int): the size of the rectangle
+            value (int): the height of the rectangle
 
             Raises:
             TypeError: If height is not integer.
