@@ -2,7 +2,7 @@
 """Define a Rectangle class"""
 
 class rectangle:
-    """defines a rectangle"""
+    """defines the rectangle area and perimetre"""
 
     def __init__(self, width=0, height=0):
         """
@@ -71,3 +71,4 @@ class rectangle:
             return (0)
         else:    
             return self.__width + self.__height
+        
