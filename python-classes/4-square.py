@@ -36,11 +36,3 @@ class Square:
     def area(self):
         """Return the area of the square"""
         return self.__size ** 2
-    
-    def __init__(self, size=0):
-        """Initializes a new Square instance.
-
-        Args:
-            size (int): The size of the new square.
-        """
-        self.size = size
