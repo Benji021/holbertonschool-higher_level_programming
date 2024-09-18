@@ -9,7 +9,7 @@ class Rectangle:
         Initialize a new rectangle
         
         Args:
-        widht (int): widht of the rectangle
+        widht (int): width of the rectangle
         height (int): height of the rectangle
         """
         self.width = width
