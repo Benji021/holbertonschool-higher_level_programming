@@ -18,21 +18,21 @@ class Rectangle:
 
     @property
     def width(self):
-            """Get the width of a rectangle"""
-            return self.__width
+        """Get the width of a rectangle"""
+        return self.__width
 
     @width.setter
     def width(self, value):
-            """
-            Set the width of the rectangle
+        """
+        Set the width of the rectangle
 
-            Args:
+        Args:
             value (int): the width of the rectangle
 
-            Raises:
+        Raises:
             TypeError : If width is not integer;
             ValueError: If width is less than 0;
-            """
+        """
             if not isinstance(value, int):
                 raise TypeError("width must be an integer")
             if value < 0:
