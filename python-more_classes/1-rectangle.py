@@ -10,8 +10,8 @@ class Rectangle:
         Initialize a new rectangle
 
         Args:
-        width (int): width of rectangle
-        height (int): height of rectangle
+        width (int): width of the rectangle
+        height (int): height of the rectangle
         """
         self.width = width
         self.height = height
@@ -27,7 +27,7 @@ class Rectangle:
             Set the width of the rectangle
 
             Args:
-            value (int): the size of the rectangle
+            value (int): the width of the rectangle
 
             Raises:
             TypeError : If width is not integer;
@@ -48,7 +48,7 @@ class Rectangle:
         @height.setter
         def height(self, value):
             """
-            Set the height of thr rectangle
+            Set the height of the rectangle
 
             Args:
             value (int): the height of the rectangle
