@@ -79,6 +79,6 @@ class Rectangle:
 
         line = "#" * self.__width
 
-        rect = [line]
+        rectangle = [line]
         for _ in range(self.__height):
-            return '\n'.join(rect)
+            return '\n'.join(rectangle)
