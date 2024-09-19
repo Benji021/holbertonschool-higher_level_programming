@@ -81,4 +81,5 @@ class Rectangle:
 
         rectangle = [line]
         for _ in range(self.__height):
+            rectangle.append(line)
             return '\n'.join(rectangle)
