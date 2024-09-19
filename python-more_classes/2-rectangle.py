@@ -26,7 +26,7 @@ class Rectangle:
         Set the width of the rectangle
         
         Args:
-        value (int): the width is not integer
+        value (int): the width of the rectangle
         
         Raises:
         TypeError: If width is not integer;
