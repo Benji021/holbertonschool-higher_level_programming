@@ -10,11 +10,11 @@ class Square:
         Initialize a new square with an optimal size
 
         Args:
-        size (int): size of the square
+            size (int): size of the square
 
         Raises:
-        TypeError: If size is not interger;
-        ValueError: If size is less than 0;
+            TypeError: If size is not interger;
+            ValueError: If size is less than 0;
         """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
@@ -36,7 +36,7 @@ class Square:
             value (int): the size of the square
 
         Raises:
-            TypeError: If size is not integer;
+            TypeError: If size is not an integer;
             ValueError: If size is less than 0;
         """
         if not isinstance(value, int):
