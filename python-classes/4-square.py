@@ -8,10 +8,10 @@ class Square:
     def __init__(self, size=0):
         """
         Initialize a new square with an optimal size
-        
+
         Args:
         size (int): size of the square
-        
+
         Raises:
         TypeError: If size is not interger;
         ValueError: If size is less than 0;
@@ -26,15 +26,15 @@ class Square:
     def size(self):
         """Retrieve the size of the square"""
         return self.__size
-    
+
     @size.setter
     def size(self, value):
         """
         Set the size of the square with validation
-        
+
         Args:
             value (int): the size of the square
-        
+
         Raises:
             TypeError: If size is not integer;
             ValueError: If size is less than 0;
@@ -46,5 +46,5 @@ class Square:
         self.__size = value
 
     def area(self):
-       """return the current square area"""
-       return self.__size ** 2
+        """return the current square area"""
+        return self.__size ** 2
