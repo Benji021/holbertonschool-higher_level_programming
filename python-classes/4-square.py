@@ -33,11 +33,11 @@ class Square:
         Set the size of the square with validation
         
         Args:
-        value (int): the size of the square
+            value (int): the size of the square
         
         Raises:
-        TypeError: If size is not integer;
-        ValueError: If size is less than 0;
+            TypeError: If size is not integer;
+            ValueError: If size is less than 0;
         """
         if not isinstance(value, int):
             TypeError("size must be an integer")
