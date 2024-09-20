@@ -1,47 +1,61 @@
 #!/usr/bin/python3
-"""Define the square"""
+"""
+This module will define a square class.
+"""
 
 
 class Square:
+    """
+    This is a square class.
+    """
     def __init__(self, size=0):
-        """Initializes a new Square instance.
-
-        Args:
-            size (int): The size of the new square.
         """
-        self.size = size
+         Creating instances of a square with one parameter.
+
+         Args:
+            size: will be the size of the square
+
+         Raises:
+            TypeError: if size is not an integer
+            ValueError: if size is less than zero
+         """
+
+        if not isinstance(size, int):
+            raise TypeError("size must be an integer")
+
+        if size < 0:
+            raise ValueError("size must be >= 0")
+
+        self.__size = size
 
     @property
     def size(self):
-        """
-        Retrieves the size of the square.
-
-        Returns:
-            int: The size of the square.
-        """
+        """Retrieve the size of the square"""
         return self.__size
-
+    
     @size.setter
     def size(self, value):
-         """Set the size of the square.
-
-        Args:
-            value (int): The size of the square.
-
-        Raises:
-            TypeError: If size is not an integer.
-            ValueError: If size is less than 0.
         """
-        if not isinstance(Value, int):
-            raise TypeError("size must be an integer")
-        if Value < 0:
-            raise ValueError("size must be >= 0")
-        self.__size = Value
+        Set the size of the square with validation
+        
+        Args:
+        value (int): the size of the square
+        
+        Raises:
+        TypeError: If size is not integer;
+        ValueError: If size is less than 0;
+        """
+        if not isinstance(value, int):
+            TypeError("size must be an integer")
+        if value < 0:
+            ValueError("size must be >= 0")
+        self.__size = value
 
     def area(self):
-        """Calculate the area of the square.
+        """
+        Determines the area of a square.
 
         Returns:
-            int: The area of the square.
+            int: The size of a square depending on the size
         """
-        return self.__size ** 2
+        return self.__size * self.__size
