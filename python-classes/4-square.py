@@ -13,7 +13,7 @@ class Square:
             size (int): size of the square
 
         Raises:
-            TypeError: If size is not interger;
+            TypeError: If size is not an interger;
             ValueError: If size is less than 0;
         """
         if not isinstance(size, int):
