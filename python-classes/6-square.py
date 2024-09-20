@@ -91,6 +91,7 @@ class Square:
             print("")
             return
 
+        print(f"position: {self.__position}")
         for _ in range(self.__position[1]):
             print("")
 
