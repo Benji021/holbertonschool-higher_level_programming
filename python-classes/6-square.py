@@ -17,7 +17,7 @@ class Square:
             TypeError: If size is not an interger;
             ValueError: If size is less than 0;
             TypeError: If position is not a tuple of 2 integers;
-            ValueError; If position values are less than 0;
+            ValueError: If position values are less than 0;
         """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
@@ -27,7 +27,7 @@ class Square:
 
         if not isinstance(position, tuple) or len(position) != 2:
             raise TypeError("position must be a tuple of 2 integers")
-        if not all(isinstance(pos, int) for pos in position)
+        if not all(isinstance(pos, int) for pos in position
             or any(pos < 0 for pos in position):
             raise ValueError
             ("position must be a tuple of 2 no-negative integers")
@@ -65,18 +65,20 @@ class Square:
     def position(self, value):
         """
         Set the position of the square with validation
-        
+
         Args:
             value (tuple): the position of the square
-            
+  
         Raises:
             TypeError: If value is not a tuple of 2 integers;
             ValueError: If position values are less than 0;
             """
         if not isinstance(value, tuple) or len(value) != 2:
             raise TypeError("position must be a tuple of 2 integers")
-        if not all(isinstance(pos, int) for pos in value) or any(pos < 0 for pos in value)
-        raise ValueError("position must be a tuple of 2 no-negative integers")
+        if not all(isinstance(pos, int) for pos in value)
+            or any(pos < 0 for pos in value)
+        raise ValueError
+        ("position must be a tuple of 2 no-negative integers")
         self.__position = value
 
     def area(self):
