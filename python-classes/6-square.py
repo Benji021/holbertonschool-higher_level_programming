@@ -27,8 +27,10 @@ class Square:
 
         if not isinstance(position, tuple) or len(position) != 2:
             raise TypeError("position must be a tuple of 2 integers")
-        if not all(isinstance(pos, int) for pos in position) or any(pos < 0 for pos in position):
-            raise ValueError("position must be a tuple of 2 no-negative integers")
+        if not all(isinstance(pos, int) for pos in position)
+            or any(pos < 0 for pos in position):
+            raise ValueError
+            ("position must be a tuple of 2 no-negative integers")
         self.__position = position
 
     @property
