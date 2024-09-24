@@ -4,7 +4,7 @@
 
 class BaseGeometry:
     """Empty class that defines BaseGeometry"""
-    
+
     def integer_validator(self, name, value):
         """
         Validates that value is a positive integer.
@@ -40,7 +40,6 @@ class Rectangle(BaseGeometry):
         """Returns the string representation of the rectangle"""
         return f"[Rectangle] {self.__width}/{self.__height}"
 
-# Example usage
 if __name__ == "__main__":
     r = Rectangle(3, 4)
     print(r)
