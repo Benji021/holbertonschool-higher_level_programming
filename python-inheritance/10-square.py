@@ -45,9 +45,9 @@ class Square(Rectangle):
     """Class that defines a square"""
 
     def __init__(self, size):
+        self.integer_validator("size", size)
         self.__size = size
-        self.integer_validator("size", self.__size)
-        super().__init__(self.__size, self.__size)  # Calls the Rectangle constructor
+        super().__init__(self.__size, self.__size)
 
     def area(self):
         """Returns the area of the square"""
