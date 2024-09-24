@@ -5,6 +5,14 @@
 >>> bg.integer_validator("my_int", 12)
 >>> bg.integer_validator("width", 89)
 
->>>bg.integer_validator("name", "John")
+>>>bg.area()
 >>>except Exception as e:
->>>print("[{}] {}".format(e.__class__.__name__, e))
+>>>print(e)
+
+>>>bg.integer_validator("height", "string")
+>>>except Exception as e:
+>>>print(e)
+
+>>>bg.integer_validator("width", -5)
+>>>except Exception as e:
+>>>print(e)
