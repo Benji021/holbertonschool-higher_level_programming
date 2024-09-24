@@ -15,6 +15,13 @@ class Rectangle(BaseGeometry):
         self._width = width
         self._height = height
 
+    def area(self):
+        """
+        Return the current area that raises an exeption
+        with message area() is not implemented
+        """
+        raise Exception("area() is not implemented")
+
     def integer_validator(self, name, value):
         """
         Set that validates value
