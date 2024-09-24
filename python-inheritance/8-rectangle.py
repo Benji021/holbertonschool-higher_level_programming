@@ -15,19 +15,12 @@ class Rectangle(BaseGeometry):
         self._width = width
         self._height = height
 
-    def area(self):
-        """
-        Return the current area that raises an exeption
-        with message area() is not implemented
-        """
-        raise Exception("area() is not implemented")
-
     def integer_validator(self, name, value):
         """
         Set that validates value
 
         Args: 
-            name: name is John
+            name (str): the name of parameter
             value (int): validates value
 
         Raises:
@@ -39,5 +32,5 @@ class Rectangle(BaseGeometry):
         if value <= 0:
             raise ValueError(f"{name} must be greater than 0")
 
-        if __name__ == "__8-main__":
+        if __name__ == "__main__":
             print(issubclass(Rectangle, BaseGeometry))
