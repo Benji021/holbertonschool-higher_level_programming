@@ -39,5 +39,5 @@ class Rectangle(BaseGeometry):
         if value <= 0:
             raise ValueError(f"{name} must be greater than 0")
 
-        if __name__ == "__main__":
+        if __name__ == "__8-main__":
             print(issubclass(Rectangle, BaseGeometry))
