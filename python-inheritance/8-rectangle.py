@@ -5,7 +5,7 @@
 class BaseGeometry:
     """Empty class that defines BaseGeometry"""
 
-class Rectangle:
+class Rectangle(BaseGeometry):
     """Define a rectangle"""
     def __init__(self, width, height):
         self.__integer_validator("width", width)
