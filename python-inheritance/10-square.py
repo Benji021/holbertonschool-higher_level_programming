@@ -62,3 +62,4 @@ if __name__ == "__main__":
     s = Square(5)
     print(s)
     print(s.area())
+    print(issubclass(Square, Rectangle))
