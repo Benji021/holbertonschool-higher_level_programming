@@ -4,12 +4,13 @@
 
 class BaseGeometry:
     """Empty class that defines BaseGeometry"""
+    pass
 
 class Rectangle(BaseGeometry):
     """Define a rectangle"""
     def __init__(self, width, height):
-        self.__integer_validator("width", width)
-        self.__integer_validator("height", height)
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
         self.__width = width
         self.__height = height
 
