@@ -40,6 +40,8 @@ class Rectangle(BaseGeometry):
         """Returns the string representation of the rectangle"""
         return f"[Rectangle] {self.__width}/{self.__height}"
 
+
+
 if __name__ == "__main__":
     r = Rectangle(3, 4)
     print(r)
