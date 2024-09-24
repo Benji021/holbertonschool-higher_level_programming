@@ -8,6 +8,7 @@ class BaseGeometry:
 
 class Rectangle(BaseGeometry):
     """Define a rectangle"""
+
     def __init__(self, width, height):
         self.integer_validator("width", width)
         self.integer_validator("height", height)
@@ -37,3 +38,6 @@ class Rectangle(BaseGeometry):
             raise TypeError(f"{name} must be an integer")
         if value <= 0:
             raise ValueError(f"{name} must be greater than 0")
+
+        if __name__ == "__main__":
+            print(issubclass(Rectangle, BaseGeometry))
