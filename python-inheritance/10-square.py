@@ -23,7 +23,7 @@ class BaseGeometry:
             raise ValueError(f"{name} must be greater than 0")
 
 
-class Rectangle(BaseGeometry):
+class Rectangle:
     """Class that defines a rectangle"""
 
     def __init__(self, width, height):
