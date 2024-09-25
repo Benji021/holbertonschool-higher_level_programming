@@ -42,8 +42,8 @@ class Rectangle(BaseGeometry):
 
 if __name__ == "__main__":
     try:
-        r = Rectangle(3, 5)  # This should work fine
+        r = Rectangle(3, 5)
         print(f"Rectangle created: width = {r._width}, height = {r._height}")
-        print(issubclass(Rectangle, BaseGeometry))  # This should return True
+        print(issubclass(Rectangle, BaseGeometry))
     except Exception as e:
         print(f"Error: {e}")
