@@ -43,3 +43,7 @@ class Rectangle(Shape):
 def shape_info(shape):
     print(f"Area: {shape.area():.2f}")
     print(f"Perimeter: {shape.perimeter():.2f}")
+
+if __name__ == "__main__":
+    circle = Circle(5)
+    rectangle = Rectangle(4, 6)
