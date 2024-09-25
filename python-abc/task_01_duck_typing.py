@@ -47,3 +47,6 @@ def shape_info(shape):
 if __name__ == "__main__":
     circle = Circle(5)
     rectangle = Rectangle(4, 6)
+
+    shape_info(Circle)
+    shape_info(Rectangle)
