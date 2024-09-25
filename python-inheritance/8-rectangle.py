@@ -12,8 +12,8 @@ class Rectangle(BaseGeometry):
     def __init__(self, width, height):
         self.integer_validator("width", width)
         self.integer_validator("height", height)
-        self.__width = width
-        self.__height = height
+        self._width = width
+        self._height = height
 
     def area(self):
         """
@@ -41,4 +41,9 @@ class Rectangle(BaseGeometry):
 
 
 if __name__ == "__main__":
-    print(issubclass(Rectangle, BaseGeometry))
+    try:
+        r = Rectangle(3, 5)  # This should work fine
+        print(f"Rectangle created: width = {r._width}, height = {r._height}")
+        print(issubclass(Rectangle, BaseGeometry))  # This should return True
+    except Exception as e:
+        print(f"Error: {e}")
