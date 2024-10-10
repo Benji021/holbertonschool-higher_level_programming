@@ -20,3 +20,18 @@ def fetch_and_print_posts():
         print("failed to fetch posts")
 
 def fetch_and_save_posts():
+    url = https://jsonplaceholder.typicode.com/posts
+
+    structured_data = [{
+        "id": post["id"], "title": post["title"],
+        "body": post["body"]}for post in posts]
+    
+    filedname = ["id", "title", "body"]
+
+    with open("file.csv", mode="w", newline="") as file_csv
+
+    writer = csv.DictWriter(file_csv, filedname)
+
+    writer.writeheader()
+
+    writer.writerow(structured_data)
