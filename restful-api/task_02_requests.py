@@ -38,4 +38,4 @@ def fetch_and_save_posts():
 
         writer.writeheader()
 
-        writer.writerow(structured_data)
+        writer.writerows(structured_data)
