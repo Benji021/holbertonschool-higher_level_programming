@@ -1,6 +1,7 @@
 #!/usr/bin/python3
  
 import requests
+import json
 import csv
 
 
@@ -9,6 +10,7 @@ def fetch_and_print_posts():
     url = "https://jsonplaceholder.typicode.com/posts"
 
     response = requests.get(url)
+    print("status_code:", response.status_code)
 
     if response.status_code == 200:
         posts = response.json()
