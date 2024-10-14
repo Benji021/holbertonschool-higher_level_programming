@@ -1,7 +1,6 @@
 #!/usr/bin/python3
  
 import requests
-import json
 import csv
 
 
@@ -35,10 +34,9 @@ def fetch_and_save_posts():
     
     fieldnames = ["id", "title", "body"]
 
-    with open("file.csv", mode="w", newline="") as file_csv:
-        writer = csv.DictWriter(file_csv, fieldnames=fieldnames)
+    with open("post.csv", mode="w", newline="") as file:
+        writer = csv.DictWriter(file, fieldnames=fieldnames)
 
         writer.writeheader()
 
-        for data in structured_data:
-         writer.writerow(data)
+        writer.writerow(structured_data)
