@@ -35,9 +35,9 @@ def fetch_and_save_posts():
             } for post in posts]
 
 
-    with open("posts.csv", mode="w", newline="", encoding="utf-8") as dic:
-        writer = csv.DictWriter(dic, fieldnames=["id", "title", "body"])
+        with open("posts.csv", mode="w", newline="", encoding="utf-8") as dic:
+            writer = csv.DictWriter(dic, fieldnames=["id", "title", "body"])
 
-        writer.writeheader()
+            writer.writeheader()
 
-        writer.writerows(structured_data)
+            writer.writerows(structured_data)
