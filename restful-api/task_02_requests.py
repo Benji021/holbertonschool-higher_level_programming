@@ -31,11 +31,10 @@ def fetch_and_save_posts():
     structured_data = [{
         "id": post["id"], "title": post["title"],
         "body": post["body"]} for post in posts]
-    
-    fieldnames = ["id", "title", "body"]
+
 
     with open("post.csv", mode="w", newline="") as file:
-        writer = csv.DictWriter(file, fieldnames=fieldnames)
+        writer = csv.DictWriter(file, fieldnames=["id", "title", "body"])
 
         writer.writeheader()
 
