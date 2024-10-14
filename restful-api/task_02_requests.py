@@ -38,5 +38,5 @@ def fetch_and_save_posts():
 
         writer.writeheader()
 
-    for data in structured_data:
-        writer.writerow(data)
+        for data in structured_data:
+         writer.writerow(data)
