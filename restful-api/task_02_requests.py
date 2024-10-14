@@ -13,8 +13,8 @@ def fetch_and_print_posts():
     if response.status_code == 200:
         posts = response.json()
         
-    for post in posts:
-        print(post["title"])
+        for post in posts:
+            print(post["title"])
 
     else:
         print("failed to fetch posts")
@@ -36,7 +36,7 @@ def fetch_and_save_posts():
     with open("file.csv", mode="w", newline="") as file_csv:
         writer = csv.DictWriter(file_csv, fieldnames=fieldnames)
 
-    writer.writeheader()
+        writer.writeheader()
 
     for data in structured_data:
         writer.writerow(data)
