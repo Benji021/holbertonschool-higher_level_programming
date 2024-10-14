@@ -29,8 +29,10 @@ def fetch_and_save_posts():
         posts = response.json()
 
         structured_data = [{
-            "id": post["id"], "title": post["title"],
-            "body": post["body"]} for post in posts]
+            "id": post["id"],
+            "title": post["title"],
+            "body": post["body"]
+            } for post in posts]
 
 
     with open("posts.csv", mode="w", newline="", encoding="utf-8") as file:
