@@ -2,7 +2,7 @@
 
 import http.server
 
-class SimpleHTTPRequestHandler
+class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
 
 from flask import Flask, jsonify, request
 
