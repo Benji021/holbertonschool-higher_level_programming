@@ -1,5 +1,8 @@
 #!/bin/python3
 
+import http.server
+
+class SimpleHTTPRequestHandler
 
 from flask import Flask, jsonify, request
 
