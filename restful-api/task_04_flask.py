@@ -27,7 +27,7 @@ def status():
 #Specific User by Username
 @app.route('/users/<usernames>')
 def get_user(username):
-    user = user.get(username)
+    user = users.get(username)
     if user:
         return jsonify(user)
     else:
