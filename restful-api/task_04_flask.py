@@ -1,8 +1,5 @@
 #!/bin/python3
 
-import http.server
-
-class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
 
 from flask import Flask, jsonify, request
 
@@ -12,18 +9,22 @@ users = {
     "jane": {"name": "jane", "age": 28, "city": "Los Angeles"}
 }
 
+#Home route
 @app.route('/')
 def home():
     return "welcome to the Flask API!"
 
+#Data route
 @app.route('/data')
 def get_usernames():
     return jsonify(list(users.keys()))
 
+#Status route
 @app.route('/status')
 def status():
     return "ok"
 
+#Specific User by Username
 @app.route('/users/<usernames>')
 def get_user(username):
     user = user.get(username)
@@ -32,6 +33,7 @@ def get_user(username):
     else:
         return jsonify({"error": "user not found"}), 404
 
+#add new User
 @app.route('/add_user', methods=['POST'])
 def add_user():
     data = request.get_json()
