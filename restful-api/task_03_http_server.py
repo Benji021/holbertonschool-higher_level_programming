@@ -37,16 +37,28 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
             self.send_header('Content-Type', 'application/json')
             self.end_headers()
             self.wfile.write(json.dumps(info_data).encode('utf-8'))
-        
+
+        #Handle /status
+        elif self.path == '/status':
+            self.send_reponse(200)
+            self.send_header('content-Type', 'Text/plain')
+            self.send_header()
+            self.wfile.write(b'ok')
+
+        else:
+            self.send_error(404, message=f"Endpoint '{self.path}' not found")
+
+
         # Handle undefined endpoints
         else:
             self.send_response(404)
             self.send_header('Content-Type', 'text/plain')
             self.end_headers()
-            self.wfile.write(b'Endpoint not found')
+            self.wfile.write(b'404 Not Found')
+
 
 # Set up and start the server
-def run(server_class=http.server.HTTPServer, handler_class=SimpleHTTPRequestHandler, port=8000):
+def run(server_class=http.server.HTTPServer,handler_class=SimpleHTTPRequestHandler, port=8000):
     server_address = ('', port)
     httpd = server_class(server_address, handler_class)
     print(f'Serving on port {port}...')
