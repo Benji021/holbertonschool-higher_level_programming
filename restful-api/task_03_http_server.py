@@ -46,8 +46,7 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
             self.wfile.write(b'Endpoint not found')
 
 # Set up and start the server
-def run(server_class=http.server.HTTPServer,
-        handler_class=SimpleHTTPRequestHandler, port=8000):
+def run(server_class=http.server.HTTPServer, handler_class=SimpleHTTPRequestHandler, port=8000):
     server_address = ('', port)
     httpd = server_class(server_address, handler_class)
     print(f'Serving on port {port}...')
