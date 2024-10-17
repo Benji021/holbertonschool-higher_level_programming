@@ -25,7 +25,7 @@ def status():
     return "ok"
 
 #Specific User by Username
-@app.route('/users/<usernames>')
+@app.route('/users/<username>')
 def get_user(username):
     user = users.get(username)
     if user:
