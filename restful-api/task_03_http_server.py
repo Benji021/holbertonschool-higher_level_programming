@@ -38,14 +38,13 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(json.dumps(info_data).encode('utf-8'))
 
-        #Handle /status
+        #Handle /status endpoint
         elif self.path == '/status':
             self.send_response(200)
             self.send_header('content-Type', 'text/plain')
             self.send_header()
             self.wfile.write(b'ok')
 
-    
         # Handle undefined endpoints
         else:
             self.send_response(404)
