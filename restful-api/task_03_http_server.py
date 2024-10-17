@@ -42,7 +42,7 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
         elif self.path == '/status':
             self.send_response(200)
             self.send_header('content-Type', 'text/plain')
-            self.send_header()
+            self.end_headers()
             self.wfile.write(b'ok')
 
         # Handle undefined endpoints
@@ -61,4 +61,4 @@ def run(server_class=http.server.HTTPServer,handler_class=SimpleHTTPRequestHandl
     httpd.serve_forever()
 
 if __name__ == "__main__":
-    run()
+    run()#
