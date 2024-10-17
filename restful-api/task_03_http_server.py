@@ -48,14 +48,19 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
         # Handle undefined endpoints
         else:
             self.send_response(404)
-            self.send_header('Content-Type', 'text/plain')
+            self.send_header('Content-Type', 'application/json')
             self.end_headers()
-            self.wfile.write(b'404 Not Found')
+            err_ = {
+                "404 Not Found"
+            }
+            self.wfile.write(json.dump(err_))
+
+            #self.wfile.write(b'404 Not Found')
 
 
 # Set up and start the server
 def run(server_class=http.server.HTTPServer, handler_class=SimpleHTTPRequestHandler, port=8000):
-    server_address = ('', port)
+    server_address = ('localhost', port)
     httpd = server_class(server_address, handler_class)
     print(f'Serving on port {port}...')
     httpd.serve_forever()
