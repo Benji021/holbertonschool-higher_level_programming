@@ -50,7 +50,9 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
             self.send_response(404)
             self.send_header('Content-Type', 'application/json')
             self.end_headers()
-            err_ = "Not Found"
+            err_ = {
+                "error": "Not Found"
+            }
             self.wfile.write(json.dump(err_))
 
             #self.wfile.write(b'404 Not Found')
