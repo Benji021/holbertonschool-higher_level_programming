@@ -1,4 +1,4 @@
-#!/bin/python3
+#!/usr/bin/env python3
 
 
 from flask import Flask, jsonify, request
@@ -22,7 +22,7 @@ def get_usernames():
 #Status route
 @app.route('/status')
 def status():
-    return "ok"
+    return "OK"
 
 #Specific User by Username
 @app.route('/users/<username>')
