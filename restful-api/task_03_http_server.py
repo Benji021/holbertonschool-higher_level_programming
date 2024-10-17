@@ -45,10 +45,7 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
             self.send_header()
             self.wfile.write(b'ok')
 
-        else:
-            self.send_error(404, message=f"Endpoint '{self.path}' not found")
-
-
+    
         # Handle undefined endpoints
         else:
             self.send_response(404)
