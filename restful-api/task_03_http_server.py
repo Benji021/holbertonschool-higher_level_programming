@@ -40,7 +40,7 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
 
         #Handle /status
         elif self.path == '/status':
-            self.send_reponse(200)
+            self.send_response(200)
             self.send_header('content-Type', 'Text/plain')
             self.send_header()
             self.wfile.write(b'ok')
