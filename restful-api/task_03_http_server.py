@@ -43,7 +43,7 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
             self.send_response(404)
             self.send_header('Content-Type', 'text/plain')
             self.end_headers()
-            self.wfile.write(b '404 Not Found', 'Endpoint not found')
+            self.wfile.write(b'404 Not Found', 'Endpoint not found')
 
 # Set up and start the server
 def run(server_class=http.server.HTTPServer, handler_class=SimpleHTTPRequestHandler, port=8000):
