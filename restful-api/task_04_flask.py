@@ -39,6 +39,9 @@ def get_user(username):
 def add_user():
     data = request.get_json()
 
+    if data is None:
+        return jsonify({"error": "No JSON data provided"}), 400
+
     if "username" not in data:
         return jsonify({"error": "Username is required"}), 400
     
