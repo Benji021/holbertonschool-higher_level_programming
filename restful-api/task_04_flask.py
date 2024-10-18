@@ -52,9 +52,9 @@ def add_user():
     
     users[username] = {
         "username": username,
-        "name": data.get("name"),
-        "age": data.get("age"),
-        "city": data.get("city")
+        "name": data("name"),
+        "age": data("age"),
+        "city": data("city")
     }
 
     return jsonify({
