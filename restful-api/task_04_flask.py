@@ -38,7 +38,7 @@ def get_user(username):
 @app.route('/add_user', methods=['POST'])
 def add_user():
     data = request.get_json()
-    print("Données reçues :", data)
+    print("Data received :", data)
 
     if data is None:
         return jsonify({"error": "No JSON data provided"}), 400
