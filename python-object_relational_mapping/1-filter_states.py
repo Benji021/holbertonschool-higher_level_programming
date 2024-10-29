@@ -2,20 +2,26 @@
 """ List all states with a name starting with N from the hbtn_0e_0_usa """
 
 import MySQLdb
-from sys import argv
+from sys import sys
 
 
 if __name__ == "__main__":
 
-    db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
-                         passwd=argv[2], db=argv[3], charset="utf8")
-    cur = db.cursor()
-    cur.execute(
-        "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id")
-    query_rows = cur.fetchall()
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database = sys.argv[3]
 
-    for row in query_rows:
-        if ('N' in row[1]):
-            print(row)
-    cur.close()
+    db = MySQLdb.connect(host="localhost", port=3306, user=username,
+        passwd=password, db=database)
+    
+    cursor = db.cursor()
+
+    query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
+    cursor.execute(query)
+
+    states = cursor.fetchall()
+    for state in states:
+        print(state)
+              
+    cursor.close()
     db.close()
