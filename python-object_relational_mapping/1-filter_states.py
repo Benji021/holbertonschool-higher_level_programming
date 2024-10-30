@@ -3,8 +3,7 @@
 
 
 import sys
-import pymysql
-pymysql.install_as_MySQLdb()
+import MySQLdb
 
 
 if __name__ == "__main__":
@@ -14,7 +13,7 @@ if __name__ == "__main__":
     database = sys.argv[3]
 
     try:
-        db = pymysql.connect(host="localhost", port=3306, user=username,
+        db = MySQLdb.connect(host="localhost", port=3306, user=username,
             passwd=password, db=database)
 
         cursor = db.cursor()
@@ -24,7 +23,7 @@ if __name__ == "__main__":
         states = cursor.fetchall()
         for state in states:
             print(state)
-    except pymysql.Error as e:
+    except MySQLdb.Error as e:
         print(f"Error {e}")
 
     finally:
