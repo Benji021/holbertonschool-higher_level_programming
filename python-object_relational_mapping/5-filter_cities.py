@@ -2,7 +2,7 @@
 """ lists all cities of that state"""
 
 import sys
-import MySQLdb
+import pymysql
 
 if __name__ == '__main__':
 
@@ -11,7 +11,7 @@ if __name__ == '__main__':
         sys.exit(1)
 
     try:
-        db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2],
+        db = pymysql.connect(user=sys.argv[1], passwd=sys.argv[2],
                             db=sys.argv[3], port=3306)
 
         cur = db.cursor()
@@ -30,7 +30,7 @@ if __name__ == '__main__':
         else:
             print("No cities found for the specified state.")
 
-    except MySQLdb.Error as e:
+    except pymysql.Error as e:
         print(f"Error: {e}")
 
     finally:
