@@ -10,21 +10,29 @@ if __name__ == '__main__':
         print("Usage: python script.py <username> <password> <database> <state_name>")
         sys.exit(1)
 
-    db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2],
-                         db=sys.argv[3], port=3306)
+    try:
+        db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2],
+                            db=sys.argv[3], port=3306)
 
-    cur = db.cursor()
+        cur = db.cursor()
 
-    query = """
-        SELECT cities.id, cities.name, states.name
-        FROM cities JOIN states ON cities.state_id = states.id
-        WHERE states.name = %s;
-    """
-    cur.execute(query, (sys.argv[4],))
+        query = """
+            SELECT cities.id, cities.name, states.name
+            FROM cities JOIN states ON cities.state_id = states.id
+            WHERE states.name = %s;
+        """
+        cur.execute(query, (sys.argv[4],))
 
-    states = cur.fetchall()
+        states = cur.fetchall()
 
-    print(", ".join([state[1] for state in states]))
+        if states:
+            print(", ".join([state[1] for state in states]))
+        else:
+            print("No cities found for the specified state.")
 
-    cur.close()
-    db.close()
+    except MySQLdb.Error as e:
+        print(f"Error: {e}")
+
+    finally:
+        cur.close()
+        db.close()
