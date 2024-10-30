@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ List all states with a name starting with N from the hbtn_0e_0_usa """
 
-"import MySQLdb"
+
 import sys
 import pymysql
 pymysql.install_as_MySQLdb()
@@ -26,7 +26,9 @@ if __name__ == "__main__":
             print(state)
     except pymysql.Error as e:
         print(f"Error {e}")
-    
+
     finally:
-        cursor.close()
-        db.close()
+        if cursor:
+            cursor.close()
+        if db:
+            db.close()
