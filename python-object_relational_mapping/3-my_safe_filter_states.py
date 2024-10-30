@@ -43,13 +43,13 @@ def main():
             print(row)
 
     except MySQLdb.Error as e:
-        print(f"Error: {e}")
+        print("MySQL Error: e")
     
     finally:
         # Close the cursor and database connection
-        if cursor:
+        if 'cursor' in locals():
             cursor.close()
-        if db:
+        if 'db' in locals():
             db.close()
 
 if __name__ == "__main__":
