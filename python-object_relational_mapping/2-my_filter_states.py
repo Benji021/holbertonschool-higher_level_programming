@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ List all states with a name starting with N from the hbtn_0e_0_usa """
 
-import pymysql
+import MySQLdb
 import sys
 
 
@@ -14,7 +14,7 @@ if __name__ == "__main__":
     state_name = sys.argv[4]
 
     # Connect to the MySQL database
-    db = pymysql.connect(host="localhost", port=3306, user=mysql_username,
+    db = MySQLdb.connect(host="localhost", port=3306, user=mysql_username,
                          passwd=mysql_password, db=database_name)
 
     cursor = db.cursor()
