@@ -15,8 +15,8 @@ def list_states():
 
     try:
         # Database connexion
-        db = MySQLdb.connect(host="localhost", port=3306, user=mysql_username,
-            passwd=mysql_password, db=database_name)
+        db = MySQLdb.connect(host="localhost", user=mysql_username,
+            passwd=mysql_password, db=database_name, port=3306)
 
         #cursor creation
         cursor = db.cursor()
