@@ -7,7 +7,6 @@ import MySQLdb
 
 if __name__ == '__main__':
 
-    try:
         # Connect to the MySQL database
         db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2],
                          db=sys.argv[3], port=3306)
@@ -21,10 +20,6 @@ if __name__ == '__main__':
         for state in states:
             print(state)
 
-    except MySQLdb.Error as e:
-        print(f"SQL connection or execution error : {e}")
-
-    finally:
-        # Close the cursor and database connection
+        # Close to connexion
         cursor.close()
         db.close()
