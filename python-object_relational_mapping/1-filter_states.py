@@ -8,6 +8,11 @@ import MySQLdb
 
 def list_states():
 
+    # Retrieving arguments
+    mysql_username = sys.argv[1]
+    mysql_password = sys.argv[2]
+    database_name = sys.argv[3]
+
     try:
         # Database connexion
         db = MySQLdb.connect(host="localhost", port=3306, user=mysql_username,
