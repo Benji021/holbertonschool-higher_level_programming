@@ -7,6 +7,10 @@ import MySQLdb
 
 if __name__ == '__main__':
 
+    if len(sys.argv) != 5:
+        print("Usage: ./script.py <username> <password> <database> <state_name>")
+        sys.exit(1)
+
     try:
         # Connect to the MySQL database
         db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2],
