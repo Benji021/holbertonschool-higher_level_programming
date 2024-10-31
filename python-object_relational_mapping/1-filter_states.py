@@ -30,8 +30,8 @@ def main():
         cursor.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC")
 
         # Retrieving and displaying results
-        states = cursor.fetchall()
-        for state in states:
+        results = cursor.fetchall()
+        for state in results:
             print(state)
     
     except MySQLdb.Error as e:
