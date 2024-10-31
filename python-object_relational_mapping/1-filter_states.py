@@ -35,13 +35,13 @@ def main():
             print(state)
     
     except MySQLdb.Error as e:
-        print(f"Error {e}")
+        print(f"SQL connection or execution error : {e}")
 
     finally:
         # Close to connexion
-        if cursor:
+        if 'cursor' in locals() and cursor:
             cursor.close()
-        if db:
+        if 'db' in locals() and db:
             db.close()
 
 if __name__ == "__main__":
