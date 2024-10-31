@@ -8,9 +8,9 @@ import MySQLdb
 if __name__ == '__main__':
 
     # Retrieving arguments
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
+    mysql_username = sys.argv[1]
+    musql_password = sys.argv[2]
+    database_name = sys.argv[3]
     state_name = sys.argv[4]
 
     try:
