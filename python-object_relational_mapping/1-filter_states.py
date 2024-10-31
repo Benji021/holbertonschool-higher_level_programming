@@ -39,10 +39,8 @@ def main():
 
     finally:
         # Close to connexion
-        if 'cursor' in locals() and cursor:
-            cursor.close()
-        if 'db' in locals() and db:
-            db.close()
+        cursor.close()
+        db.close()
 
 if __name__ == "__main__":
     main()
