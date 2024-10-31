@@ -7,6 +7,7 @@ import MySQLdb
 
 if __name__ == '__main__':
 
+    try:
         # Connect to the MySQL database
         db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2],
                          db=sys.argv[3], port=3306)
@@ -19,3 +20,6 @@ if __name__ == '__main__':
         states = cursor.fetchall()
         for state in states:
             print(state)
+
+    except MySQLdb.Error as e:
+        print(f"Error connecting to MySQL: {e}")
