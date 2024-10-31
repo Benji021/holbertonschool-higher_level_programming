@@ -7,10 +7,6 @@ import sys
 
 def list_states():
 
-    if len(sys.argv) != 5:
-        print("Usage: ./script.py <mysql_username> <mysql_password> <database_name> <state_name>")
-        return
-
     # Retrieving arguments
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
