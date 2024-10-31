@@ -20,13 +20,11 @@ def list_states():
 
         cursor = db.cursor()
 
-        # Execute the query
+        # Execute SQL query
         cursor.execute("SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(state_name))
 
         # Fetch all results
         results = cursor.fetchall()
-
-        # Display the results
         for row in results:
             print(row)
 
