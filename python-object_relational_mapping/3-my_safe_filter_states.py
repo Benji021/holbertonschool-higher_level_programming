@@ -7,11 +7,7 @@ import MySQLdb
 
 if __name__ == '__main__':
 
-    # Check the number of arguments
-    if len(sys.argv) != 5:
-        print("Usage: ./script.py <username> <password> <database> <state_name>")
-        sys.exit(1)
-
+    # Retrieving arguments
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
