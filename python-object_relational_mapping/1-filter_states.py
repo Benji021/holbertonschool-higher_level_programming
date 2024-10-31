@@ -6,12 +6,12 @@ import sys
 import MySQLdb
 
 
-def main():
+def list_states():
     # Checking arguments
     if len(sys.argv) != 4:
         print("Usage: ./script.py <mysql_username> <mysql_password> <database_name>")
         return
-    
+
     # Retrieving arguments
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
@@ -27,13 +27,13 @@ def main():
         cursor = db.cursor()
 
         #Execute SQL query to retrieve reports sorted by id
-        cursor.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC")
+        cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC;")
 
         # Retrieving and displaying results
-        results = cursor.fetchall()
-        for state in results:
+        states = cursor.fetchall()
+        for state in states:
             print(state)
-    
+
     except MySQLdb.Error as e:
         print(f"SQL connection or execution error : {e}")
 
@@ -43,4 +43,4 @@ def main():
         db.close()
 
 if __name__ == "__main__":
-    main()
+    list_states()
