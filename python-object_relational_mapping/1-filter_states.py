@@ -7,16 +7,6 @@ import MySQLdb
 
 
 def list_states():
-    # Checking arguments
-    if len(sys.argv) != 4:
-        print("Usage: ./script.py <mysql_username> <mysql_password> <database_name>")
-        return
-
-    # Retrieving arguments
-    mysql_username = sys.argv[1]
-    mysql_password = sys.argv[2]
-    database_name = sys.argv[3]
-
 
     try:
         # Database connexion
