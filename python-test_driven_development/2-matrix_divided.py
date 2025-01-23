@@ -4,22 +4,24 @@ This module provides a function to divide all elements of a matrix by a given di
 """
 
 
+import math
+
 def matrix_divided(matrix, div):
     """
- Divides all elements of the matrix by div.
+    Divides all elements of the matrix by div.
     
-Args:
-    matrix (list of lists of int/float): The matrix to be divided.
-    div (int/float): The number by which to divide the matrix elements.
+    Args:
+        matrix (list of lists of int/float): The matrix to be divided.
+        div (int/float): The number by which to divide the matrix elements.
     
-Returns:
-    list: A new matrix with the divided elements.
+    Returns:
+        list: A new matrix with the divided elements.
     
-Raises:
-    TypeError: If the matrix is not a list of lists of integers/floats.
-    TypeError: If div is not a number.
-    ZeroDivisionError: If div is zero.
-"""
+    Raises:
+        TypeError: If the matrix is not a list of lists of integers/floats.
+        TypeError: If div is not a number.
+        ZeroDivisionError: If div is zero.
+    """
 
     if (not isinstance(matrix, list) or
         not all(isinstance(row, list) for row in matrix) or
