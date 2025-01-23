@@ -4,8 +4,6 @@ This module provides a function to divide all elements of a matrix by a given di
 """
 
 
-import math
-
 def matrix_divided(matrix, div):
     """
     Divides all elements of the matrix by div.
