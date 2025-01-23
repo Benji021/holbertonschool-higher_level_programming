@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""
+
+
+def matrix_divided(matrix, div):
+    """
  Divides all elements of the matrix by div.
     
 Args:
@@ -14,8 +17,6 @@ Raises:
     ZeroDivisionError: If div is zero.
 """
 
-
-def matrix_divided(matrix, div):
     if (not isinstance(matrix, list) or
         not all(isinstance(row, list) for row in matrix) or
         not all(isinstance(element, (int, float)) for row in matrix for element in row)):
