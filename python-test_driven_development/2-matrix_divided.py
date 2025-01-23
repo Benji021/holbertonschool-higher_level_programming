@@ -26,13 +26,14 @@ def matrix_divided(matrix, div):
         not all(isinstance(row, list) for row in matrix) or
         not all(isinstance(element, (int, float))
                 for row in matrix for element in row)):
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        raise TypeError("matrix must be a matrix (list of lists)\
+                        of integers/floats")
 
     row_length = len(matrix[0])
     if not all(len(row) == row_length for row in matrix):
         raise TypeError("Each row of the matrix must have the same size")
 
-    if not isinstance(div, (int, float)) or div in (float('inf'),
+    if not isinstance(div, (int, float)) or div in (float('inf'),\
         float('-inf')) or div != div:  # div != div checks for NaN):
         raise TypeError("div must be a number")
 
