@@ -17,6 +17,7 @@ Returns:
     
 Raises:
     TypeError: If the matrix is not a list of lists of integers/floats.
+    TypeError: If div is not a number.
     ZeroDivisionError: If div is zero.
 """
 
