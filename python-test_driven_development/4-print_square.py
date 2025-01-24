@@ -11,7 +11,7 @@ def print_square(size):
 
     Args:
         size (int): The size of the square (length of each side).
-    
+
     Raises:
         TypeError: If size is not an integer.
         ValueError: If size is less than 0.
