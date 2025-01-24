@@ -21,7 +21,7 @@ def text_indentation(text):
         raise TypeError("text must be a string")
 
     result = ""
-    skip_space = True
+    skip_space = False
 
     for char in text:
         result += char
@@ -31,6 +31,8 @@ def text_indentation(text):
         elif char == " " and skip_space:
             continue
         else:
+            result += char
             skip_space = False
 
-        print(result.strip())
+    for line in result.split("n"):
+        print(line.strip())
