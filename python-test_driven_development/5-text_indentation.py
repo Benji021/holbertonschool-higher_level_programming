@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This module does X, Y, and Z.
+This module formats text by adding two newlines after `.`, `?`, and `:`
 """
 
 
@@ -24,15 +24,12 @@ def text_indentation(text):
     skip_space = False
 
     for char in text:
+        if skip_space and char == " ":
+            continue
         result += char
+        skip_space = False
         if char in ".?:":
             result += "\n\n"
             skip_space = True
-        elif char == " " and skip_space:
-            continue
-        else:
-            result += char
-            skip_space = False
 
-    for line in result.split("n"):
-        print(line.strip())
+    print(result.strip())
