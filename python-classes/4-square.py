@@ -7,7 +7,7 @@ class Square:
 
     def __init__(self, size=0):
         """
-        Initialize a new square with an optimal size
+        Initialize a new square with a given size
 
         Args:
             size (int): size of the square
@@ -40,9 +40,9 @@ class Square:
             ValueError: If size is less than 0;
         """
         if not isinstance(value, int):
-            TypeError("size must be an integer")
+            raise TypeError("size must be an integer")
         if value < 0:
-            ValueError("size must be >= 0")
+            raise ValueError("size must be >= 0")
         self.__size = value
 
     def area(self):
