@@ -11,7 +11,7 @@ class Square:
 
         Args:
             size (int): size of the square
-            position (int): position of the square (x, y)
+            position (tuple): position of the square (x, y)
 
         Raises:
             TypeError: If size is not an interger;
@@ -87,9 +87,7 @@ class Square:
             print("")
             return
 
-        print(f"position: {self.__position}")
-        for _ in range(self.__position[1]):
-            print("")
+        print("\n" * self.__position[1], end=""): # type: ignore # Manages vertical spaces
 
         for _ in range(self.__size):
             print(" " * self.__position[0] + "#" * self.__size)
