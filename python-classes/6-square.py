@@ -28,7 +28,7 @@ class Square:
         if not isinstance(position, tuple) or len(position) != 2:
             raise TypeError("position must be a tuple of 2 integers")
         if not all(isinstance(pos, int) for pos in position) or any(pos < 0 for pos in position):
-            raise ValueError("position must be a tuple of 2 no-negative integers")
+            raise ValueError("position must be a tuple of 2 non-negative integers")
         self.__position = position
 
     @property
@@ -49,9 +49,9 @@ class Square:
             ValueError: If size is less than 0;
         """
         if not isinstance(value, int):
-            TypeError("size must be an integer")
+            raise TypeError("size must be an integer")
         if value < 0:
-            ValueError("size must be >= 0")
+            raise ValueError("size must be >= 0")
         self.__size = value
 
     @property
@@ -73,7 +73,7 @@ class Square:
             """
         if not isinstance(value, tuple) or len(value) != 2:
             raise TypeError("position must be a tuple of 2 integers")
-        if not all(isinstance(pos, int) for pos in value(tuple)) or any(pos < 0 for pos in value):
+        if not all(isinstance(pos, int) for pos in value) or any(pos < 0 for pos in value):
             raise ValueError("position must be a tuple of 2 no-negative integers")
         self.__position = value
 
@@ -91,5 +91,5 @@ class Square:
         for _ in range(self.__position[1]):
             print("")
 
-            for _ in range(self.__size):
-                print(" " * self.__position[0] + "#" * self.__size)
+        for _ in range(self.__size):
+            print(" " * self.__position[0] + "#" * self.__size)
