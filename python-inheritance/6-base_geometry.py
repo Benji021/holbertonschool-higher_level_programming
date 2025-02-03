@@ -1,13 +1,13 @@
 #!/usr/bin/python3
-"""Docstring Improve Geometry"""
+""" This is Docstring Geometry module """
 
 
 class BaseGeometry:
-    """Empty class that defines BaseGeometry"""
+    """ Empty class define BaseGeometry """
 
-    def area(self):
-        """
-        Return the current area that raises an exeption
-        with message area() is not implemented
-        """
-        raise Exception("area() is not implemented")
+def area(self):
+    """
+    Return current the area that raise an exeption
+    with message area() is not implemented
+    """
+    raise Exception("area() is not implemented")
