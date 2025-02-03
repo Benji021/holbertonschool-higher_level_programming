@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""Defining a class MyList"""
+""" This is docstring MyList"""
 
 
 class MyList(list):
-    """Class MyList that inherits from list"""
+    """ Define MyList that inheritance list """
 
-    def print_sorted(self):
-        """Print sorted list"""
-        print(sorted(self))
+def print_sorted(self):
+    """ Print the list, but sorted ascensing sort """
+    print(sorted(self))
