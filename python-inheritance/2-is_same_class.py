@@ -1,11 +1,10 @@
 #!/usr/bin/python3
-"""Docstring for exact same object"""
+""" This is Docstring a same an object """
 
 
 def is_same_class(obj, a_class):
     """
-    Function return True if the object is exactly
-    an instance of specified class
-    otherwise False
+    Function that return True if the object is exactly of the specified class
+    Otherwise is False
     """
-    return type(obj) is a_class
+    return (obj) is a_class
