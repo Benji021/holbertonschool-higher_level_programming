@@ -3,13 +3,13 @@
 
 
 class BaseGeometry:
-    """ Empty class define BaseGeometry """
+    """ A class that defines basic geometric properties """
 
     def area(self):
         """
-     Return current the area that raise an exeption
-     with message area() is not implemented
-     """
+        Raises an Exception with a message indicating that 
+        the method is not implemented
+        """
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
