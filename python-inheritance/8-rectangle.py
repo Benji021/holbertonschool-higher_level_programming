@@ -3,7 +3,7 @@
 
 
 class BaseGeometry:
-    """Empty class that defines BaseGeometry"""
+    """Class that defines BaseGeometry"""
 
     def integer_validator(self, name, value):
         """
