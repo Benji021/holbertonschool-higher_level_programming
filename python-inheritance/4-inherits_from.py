@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" This is a Docstring Only sub class of """
+""" Function to check if an object is an instance of 
+a class that inherited from a specified class """
 
 
 def inherits_from(obj, a_class):
