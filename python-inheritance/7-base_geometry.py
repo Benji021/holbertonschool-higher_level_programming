@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" This is Docstring Geometry module """
+""" This is the BaseGeometry module """
 
 
 class BaseGeometry:
@@ -14,14 +14,14 @@ class BaseGeometry:
 
     def integer_validator(self, name, value):
         """
-        Set a valid value
+        Validate that 'value' is a positive integer
     
         Args:
-            name : my name is John
+            name (str) : The name of the variable (always a string)
             value(int) : value to be validated
     
         Raises: 
-        ValueError : if value is less or equal 0
+        ValueError : if value is less than or equal to 0
         TypeError : if value is not an integer
         """
         if not isinstance(value, int):
