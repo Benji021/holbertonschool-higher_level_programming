@@ -2,15 +2,17 @@
 """Docstring shapes, interface and duck typing"""
 
 
-from abc import ABC
+from abc import ABC, abstractmethod
 import math
 
 
 class Shape(ABC):
 
+    @abstractmethod
     def area(self):
         pass
 
+    @abstractmethod
     def perimeter(self):
         pass
 
@@ -48,5 +50,5 @@ if __name__ == "__main__":
     circle = Circle(5)
     rectangle = Rectangle(4, 6)
 
-    shape_info(Circle)
-    shape_info(Rectangle)
+    shape_info(circle)
+    shape_info(rectangle)

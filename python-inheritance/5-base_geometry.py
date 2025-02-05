@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-"""Docstring Geometry module"""
+""" This is Docstring Geometry module """
 
 
 class BaseGeometry:
-    """Empty class that defines BaseGeometry"""
+    """ Empty class define BaseGeometry """
     pass
