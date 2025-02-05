@@ -2,15 +2,17 @@
 """Docstring shapes, interface and duck typing"""
 
 
-from abc import ABC
+from abc import ABC, abstractmethod
 import math
 
 
 class Shape(ABC):
 
+    @abstractmethod
     def area(self):
         pass
 
+    @abstractmethod
     def perimeter(self):
         pass
 
