@@ -7,4 +7,8 @@ class MyList(list):
 
     def print_sorted(self):
         """ Print the list, but sorted ascensing sort """
-        print(sorted(self))
+    
+        if len(self) == 0:
+            print([])
+        else:
+            print(sorted(self))
