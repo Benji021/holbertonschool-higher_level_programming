@@ -46,7 +46,7 @@ class Rectangle(BaseGeometry):
 if __name__ == "__main__":
     try:
         r = Rectangle(3, 5)
-        print(f"Rectangle created: width = {r._Rectangle__width}, height = {r._Rectangle__height}")
+        print(f"Rectangle created: width = {r.__width}, height = {r.__height}")
         print(issubclass(Rectangle, BaseGeometry))
 
         print(f"Area: {r.area()}")
