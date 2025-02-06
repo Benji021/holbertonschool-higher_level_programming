@@ -4,7 +4,7 @@ a class that inherited from a specified class """
 
 
 def inherits_from(obj, a_class):
-    """ Ckeck if obj is an instance of a_class that inherited
+    """ Check if obj is an instance of a_class that inherited
     directly or indirectly from the specified class 
     """
     return isinstance(obj, a_class) and type(obj) != a_class
