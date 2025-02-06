@@ -7,15 +7,12 @@ class BaseGeometry:
 
     def area(self):
         """
-        Raises an Exception with a message indicating that
-        the method is not implemented
-
-        Raises:
-            Exception: always, as the method is not implemented
+        Return current the area that raise an exeption
+        with message area() is not implemented
         """
         raise Exception("area() is not implemented")
 
-    def integer_validator(self, name: str, value: int) -> None:
+    def integer_validator(self, name, value):
         """
         Validate that 'value' is a positive integer
 
