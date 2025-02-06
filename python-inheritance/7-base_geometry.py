@@ -18,7 +18,7 @@ class BaseGeometry:
 
         Args:
             name (str) : The name of the variable (always a string)
-            value(int) : value to be validated
+            value (int) : value to be validated
 
         Raises:
             TypeError : if value is not an integer
