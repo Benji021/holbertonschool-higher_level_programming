@@ -11,7 +11,7 @@ class BaseGeometry:
         the method is not implemented
 
         Raises:
-            Exeption: always, as the method is not implemented
+            Exception: always, as the method is not implemented
         """
         raise Exception("area() is not implemented")
 
