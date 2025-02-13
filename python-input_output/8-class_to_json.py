@@ -2,7 +2,6 @@
 """Module that provides a function to serialize a class instance into JSON-compatible format"""
 
 
-import json
 def class_to_json(obj):
     """
     Returns the dictionary description of an object for JSON serialization.
