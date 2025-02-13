@@ -12,4 +12,7 @@ class Student:
         if attrs is None:
             return self.__dict__
 
+        if not isinstance(attrs, list) or not all(isinstance(attr, str) for attr in attrs):
+            return self.__dict__
+
         return {attr: self.__dict__[attr] for attr in attrs if attr in self.__dict__}
