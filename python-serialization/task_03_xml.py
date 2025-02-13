@@ -5,40 +5,24 @@
 import xml.etree.ElementTree as ET
 
 def serialize_to_xml(dictionary, filename):
-    root = ET.Element('data')
+    """Serialize a Python dictionary into an XML file."""
+    root = ET.Element("data")
     
-    def add_elements(parent, dictionary):
-        for key, value in dictionary.items():
-            element = ET.SubElement(parent, key)
-            if isinstance(value, dict):
-                add_elements(element, value)
-            else:
-                element.text = str(value)
-    
-    add_elements(root, dictionary)
+    for key, value in dictionary.items():
+        child = ET.SubElement(root, key)
+        child.text = str(value)  # Convert all values to strings for XML storage
     
     tree = ET.ElementTree(root)
-    tree.write(filename)
+    with open(filename, "wb") as file:
+        tree.write(file)
 
 def deserialize_from_xml(filename):
+    """Deserialize an XML file into a Python dictionary."""
     tree = ET.parse(filename)
     root = tree.getroot()
     
-    def elements_to_dict(element):
-        dictionary = {}
-        for child in element:
-            if len(child) > 0:
-                dictionary[child.tag] = elements_to_dict(child)
-            else:
-                dictionary[child.tag] = convert_type(child.text)
-        return dictionary
+    dictionary = {}
+    for child in root:
+        dictionary[child.tag] = child.text  # Values will be strings by default
     
-    def convert_type(value):
-        if value.isdigit():
-            return int(value)
-        try:
-            return float(value)
-        except ValueError:
-            return value
-    
-    return elements_to_dict(root)
+    return dictionary
