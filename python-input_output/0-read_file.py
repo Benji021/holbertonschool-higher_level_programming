@@ -3,6 +3,9 @@
 
 
 def read_file(filename=""):
-    """Reads a UTF-8 text file and prints its content to stdout."""
+    """ function opens a file
+    Args:
+        filename: is the name of the file
+    """
     with open(filename, "r", encoding="utf-8") as f:
         print(f.read(), end="")
