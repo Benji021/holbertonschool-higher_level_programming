@@ -7,4 +7,4 @@ def class_to_json(obj):
     Returns the dictionary description of an object for JSON serialization.
     The function assumes all attributes are serializable (list, dict, str, int, bool).
     """
-    return getattr(obj, "__dict__", {})
+    return {key.lstrip(f"_{obj.__class__.__name__}"): value for key, value in obj.__dict__.items()}
