@@ -1,8 +1,16 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """Docstring Pascal's Triangle"""
 
 
 def pascal_triangle(n):
+    """Generate Pascal's triangle up to the nth row.
+    
+    Args:
+        n (int): Number of rows in the triangle.
+    
+    Returns:
+        List[List[int]]: Pascal's triangle as a list of lists.
+    """
     if n <= 0:
         return []
     
