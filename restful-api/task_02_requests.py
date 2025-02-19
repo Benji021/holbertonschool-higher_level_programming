@@ -1,51 +1,40 @@
 #!/usr/bin/python3
- 
+"""Defines function that fetches posts"""
 
-import requests
+
 import csv
+import requests
 
-
-# Recover fetches all post from JSONPlaceholder and print status code
 def fetch_and_print_posts():
+    """function fetches and prints"""
     url = "https://jsonplaceholder.typicode.com/posts"
-
-    response = requests.get(url)
-    print("status_code:", response.status_code)
-
-    if response.status_code == 200:
-        posts = response.json()
-        
-        for post in posts:
+    try:
+        res = requests.get(url)
+        res.raise_for_status()  # Raise an exception for HTTP errors
+    except requests.RequestException as e:
+        print(f"Failed to retrieve data: {e}")
+        return
+    print("Status Code: {}".format(res.status_code))
+    if res.headers.get("Content-Type") == "application/json; charset=utf-8":
+        json_data = res.json()
+        for post in json_data:
             print(post["title"])
-
-    else:
-        print("failed to fetch posts")
-
 def fetch_and_save_posts():
+    """
+    Fetches all posts from JSONPlaceholder and saves them in a csv file.
+    """
     url = "https://jsonplaceholder.typicode.com/posts"
-
-    response = requests.get(url)
-
-    if response.status_code == 200:
-        posts = response.json()
-
-        structured_data = [{
-            "id": post["id"],
-            "title": post["title"],
-            "body": post["body"]
-            } for post in posts]
-
-
-        with open("posts.csv", mode="w", newline="", encoding="utf-8") as file:
-            writer = csv.DictWriter(file, fieldnames=["id", "title", "body"])
-
-            writer.writeheader()
-
-            writer.writerows(structured_data)
-
-        print("The posts.csv file has been successfully created!")
-
-
-    if __name__ == "__main__":
-        fetch_and_print_posts()
-        fetch_and_save_posts()
+    try:
+        res = requests.get(url)
+    except IOError as e:
+        print("Failed to retrieve data")
+        return
+    json_data = res.json()
+    csvfile = "posts.csv"
+    filtered_data = [{key: post[key] for key in ('id', 'title', 'body')}
+                     for post in json_data]
+    headers = ['id', 'title', 'body']
+    with open(csvfile, "w", newline="") as file:
+        csv_write = csv.DictWriter(file, fieldnames=headers)
+        csv_write.writeheader()
+        csv_write.writerows(filtered_data
