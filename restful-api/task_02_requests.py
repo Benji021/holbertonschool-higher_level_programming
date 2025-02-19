@@ -37,4 +37,4 @@ def fetch_and_save_posts():
     with open(csvfile, "w", newline="") as file:
         csv_write = csv.DictWriter(file, fieldnames=headers)
         csv_write.writeheader()
-        csv_write.writerows(filtered_data
+        csv_write.writerows(filtered_data)
