@@ -43,3 +43,4 @@ if __name__ == '__main__':
             cur.close()
         if db:
             db.close()
+df
