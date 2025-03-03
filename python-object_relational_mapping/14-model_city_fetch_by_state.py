@@ -20,3 +20,4 @@ if __name__ == '__main__':
 
     for state, city in st_cty:
         print("{}: ({}) {}".format(state.name, city.id, city.name))
+df
