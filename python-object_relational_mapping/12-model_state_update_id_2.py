@@ -20,3 +20,4 @@ if __name__ == '__main__':
     if stateUpdated:
         stateUpdated.name = 'New Mexico'
         session.commit()
+df
