@@ -29,3 +29,4 @@ if __name__ == '__main__':
 
     except MySQLdb.Error as e:
         print(f"Error connecting to MySQL: {e}")
+df
