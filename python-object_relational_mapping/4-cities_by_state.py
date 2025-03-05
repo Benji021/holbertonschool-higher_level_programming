@@ -8,7 +8,7 @@ def main():
     # Checking arguments
     if len(sys.argv) != 4:
         print("Usage: ./script.py <mysql_username> <mysql_password> <database_name>")
-        return
+        sys.exit(1)
 
     # Retrieving arguments
     mysql_username = sys.argv[1]
@@ -31,12 +31,14 @@ def main():
             print(state)
 
     except MySQLdb.Error as e:
-        print(f"Error: {e}")
+        print(f"Error: Unable to connect to the database or execute query. Details: {e}")
 
     finally:
         # Close to connexion
-        cursor.close()
-        db.close()
+        if cursor:
+            cursor.close()
+        if db:
+            db.close()
 
 if __name__ == "__main__":
     main()
