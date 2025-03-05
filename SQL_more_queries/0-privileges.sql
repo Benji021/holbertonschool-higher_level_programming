@@ -1,4 +1,4 @@
-import mysql.connector
+import mysql
 
 # Connection configuration
 HOST = "localhost"
@@ -8,7 +8,7 @@ DATABASE = "mysql"
 
 try:
     # Connexion à la base MySQL
-    conn = mysql.connector.connect(host=HOST, user=USER, password=PASSWORD, database=DATABASE)
+    conn = mysql.connect(host=HOST, user=USER, password=PASSWORD, database=DATABASE)
     cursor = conn.cursor()
     
     # Liste des utilisateurs à vérifier
