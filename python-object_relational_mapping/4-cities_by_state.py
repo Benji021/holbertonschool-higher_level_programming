@@ -23,12 +23,17 @@ def main():
         cursor = db.cursor()
 
         # Execute SQL query to retrieve reports sorted by id
-        cursor.execute("SELECT * FROM states ORDER BY id ASC")
+        cursor.execute("""
+            SELECT cities.id, cities.name, states.name
+            FROM cities
+            JOIN states ON cities.state_id = states.id
+            ORDER BY cities.id ASC
+        """)
 
         # Retrieving and displaying results
         results = cursor.fetchall()
-        for state in results:
-            print(state)
+        for city in results:
+            print(f"{city[0]}: {city[1]} ({city[2]})")
 
     except MySQLdb.Error as e:
         print(f"Error: Unable to connect to the database or execute query. Details: {e}")
