@@ -1,29 +1,24 @@
-import mysql
+import MySQLdb
 
-# Connection configuration
-HOST = "localhost"
-USER = "root"  # Replace with a user with the necessary rights
-PASSWORD = "votre_mot_de_passe"
-DATABASE = "mysql"
+# MySQL database connection
+conn = MySQLdb.connect(
+    host="localhost",
+    user="root",  # Replace with your admin user if necessary
+    passwd="password",  # Enter your password
+    database="mysql"  # The database where privileges are stored
+)
 
-try:
-    # Connexion à la base MySQL
-    conn = mysql.connect(host=HOST, user=USER, password=PASSWORD, database=DATABASE)
-    cursor = conn.cursor()
+cursor = conn.cursor()
+
+# Exécuter les commandes
+users = ["user_0d_1", "user_0d_2"]
+for user in users:
+    cursor.execute(f"SHOW GRANTS FOR '{user}'@'localhost';")
+    grants = cursor.fetchall()
     
-    # Liste des utilisateurs à vérifier
-    users = ["user_0d_1", "user_0d_2"]
-    
-    for user in users:
-        cursor.execute(f"SHOW GRANTS FOR '{user}'@'localhost';")
-        grants = cursor.fetchall()
-        print(f"Privilèges de {user}:")
-        for grant in grants:
-            print(grant[0])
-        print("-" * 50)
-    
-    # Connexion closed
-    cursor.close()
-    conn.close()
-except mysql.connector.Error as e:
-    print(f"Erreur MySQL: {e}")
+    print(f"Privilèges pour {user}:")
+    for grant in grants:
+        print(grant[0])
+
+cursor.close()
+conn.close()
