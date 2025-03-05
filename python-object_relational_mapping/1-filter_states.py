@@ -31,9 +31,8 @@ def list_states():
         states = cursor.fetchall()
         if states:
             for state in states:
-                print(f"{state[0]}: {state[1]}")
-        else:
-            print("No condition found")
+                print(state)
+
 
     except MySQLdb.Error as e:
         print(f"SQL connection or execution error : {e}")
