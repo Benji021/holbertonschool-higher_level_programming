@@ -13,6 +13,9 @@ def list_states():
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
 
+    cursor = None
+    db = None
+
     try:
         # Database connexion
         db = MySQLdb.connect(host="localhost", user=mysql_username,
@@ -26,16 +29,21 @@ def list_states():
 
         # Retrieving and displaying results
         states = cursor.fetchall()
-        for state in states:
-            print(state)
+        if states:
+            for state in states:
+                print(f"{state[0]}: {state[1]}")
+        else:
+            print("No condition found")
 
     except MySQLdb.Error as e:
         print(f"SQL connection or execution error : {e}")
 
     finally:
         # Close to connexion
-        cursor.close()
-        db.close()
+        if cursor:
+            cursor.close()
+        if db:
+            db.close()
 
 if __name__ == "__main__":
     list_states()
