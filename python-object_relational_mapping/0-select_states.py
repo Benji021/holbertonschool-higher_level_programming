@@ -1,46 +1,45 @@
 #!/usr/bin/python3
 """
-script that lists all states from the database hbtn_0e_0_usa
+Script that lists all states from the database hbtn_0e_0_usa
 """
-import sys
 import MySQLdb
+import sys
 
-
-def main():
-    # Checking arguments
-    if len(sys.argv) != 4:
-        print("Usage: ./script.py <mysql_username> <mysql_password> <database_name>")
-        return
-
-    # Retrieving arguments
-    mysql_username = sys.argv[1]
-    mysql_password = sys.argv[2]
-    database_name = sys.argv[3]
-
-    try:
-        # Database connexion
-        db = MySQLdb.connect(host="localhost", user=mysql_username, passwd=mysql_password, db=database_name, port=3306)
-
-        # Cursor creation
-        cursor = db.cursor()
-
-        # Execute SQL query to retrieve reports sorted by id
-        cursor.execute("SELECT * FROM states ORDER BY id ASC")
-
-        # Retrieving and displaying results
-        results = cursor.fetchall()
-        for state in results:
-            print(state)
-
-    except MySQLdb.Error as e:
-        print(f"Error: {e}")
-
-    finally:
-        # Close to connexion
-        if 'cursor' in locals():
-            cursor.close()
-        if 'db' in locals():
-            db.close()
 
 if __name__ == "__main__":
-    main()
+    # Check if all required arguments are provided
+    if len(sys.argv) != 4:
+        print("Usage: {} <mysql username> <mysql password> <database name>"
+              .format(sys.argv[0]))
+        sys.exit(1)
+
+    # Get command line arguments
+    username = sys.argv[1]
+    password = sys.argv[2]
+    db_name = sys.argv[3]
+
+    # Connect to MySQL server
+    db = MySQLdb.connect(
+        host="localhost",
+        port=3306,
+        user=username,
+        passwd=password,
+        db=db_name
+    )
+
+    # Create a cursor object
+    cursor = db.cursor()
+
+    # Execute the SQL query
+    cursor.execute("SELECT * FROM states ORDER BY id ASC")
+
+    # Fetch all the rows
+    states = cursor.fetchall()
+
+    # Display the results
+    for state in states:
+        print(state)
+
+    # Close cursor and database connection
+    cursor.close()
+    db.close()
