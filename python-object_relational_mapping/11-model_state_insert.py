@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
-Adds the State object "Lousiana" to the database hbtn_0e_6_usa
+Adds the State object "Louisiana" to the database hbtn_0e_6_usa
 """
+
 import sys
 from model_state import Base, State
 from sqlalchemy import create_engine
@@ -17,6 +18,8 @@ if __name__ == '__main__':
 
     newState = State(name='Louisiana')
     session.add(newState)
+    session.flush()
+    print(newState.id)
     session.commit()
 
     print(newState.id)
